@@ -4,7 +4,7 @@ const match404 = require("./match404")
 const matchRouter = require("./matchRouter")
 
 const matchApi = async (res, req, controllers, modals) => {
-  const { path, method, queryParams, deleteId } = getHttpInfo(res, req)
+  const { path, method, queryParams, id } = getHttpInfo(res, req)
   const matchRouterName = matchRouter(path)
 
   if (!matchRouterName) {
@@ -20,8 +20,8 @@ const matchApi = async (res, req, controllers, modals) => {
   }
 
   // 查询单个
-  if (method === 'GET' && path === `/api/${matchRouterName}`) {
-    return ctx.getOne(queryParams)
+  if (method === 'GET' && path === `/api/${matchRouterName}/${id}`) {
+    return ctx.getOne(id)
   }
 
   // 创建
@@ -37,8 +37,8 @@ const matchApi = async (res, req, controllers, modals) => {
   }
 
   // 删除
-  if (method === 'DELETE' && path === `/api/${matchRouterName}/${deleteId}`) {
-    return ctx.delete(deleteId)
+  if (method === 'DELETE' && path === `/api/${matchRouterName}/${id}`) {
+    return ctx.delete(id)
   }
 }
 

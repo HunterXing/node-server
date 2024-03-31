@@ -9,13 +9,12 @@ class BasicModal {
       return exec(sql);
     }
   
-    this.getOne = async (queryParams) => {
-      const whereParams = getWhere(queryParams);
-      const sql = `select * from tb_${modalName} ${whereParams}`;
+    this.getOne = async (id) => {
+      const sql = `select * from tb_${modalName} where id=${id}`;
       let data = []
       try {
         data = await exec(sql);
-        if (data && data.length >= 0) {
+        if (data && data.length > 0) {
           return data[0]
         }
         return {}

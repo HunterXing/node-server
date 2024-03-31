@@ -4,8 +4,8 @@ class BasicController {
       return ctx.getAll(params);
     }
   
-    this.getOne = async (params) => { 
-      return ctx.getOne(params);
+    this.getOne = async (id) => { 
+      return ctx.getOne(id);
     }
 
     this.create = async (params) => {

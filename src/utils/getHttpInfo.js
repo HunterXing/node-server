@@ -4,7 +4,7 @@ const getHttpInfo = (res, req) => {
   const { method, url } = req
   const path = url.split('?')[0]
   const query = url.split('?')[1]
-  const deleteId = path.split('/')[3]
+  const id = path.split('/')[3]
   const queryParams = querystring.parse(query)
 
   return {
@@ -13,7 +13,7 @@ const getHttpInfo = (res, req) => {
     path,
     query,
     queryParams,
-    deleteId
+    id
   }
 }
 module.exports = getHttpInfo
