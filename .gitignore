@@ -109,3 +109,4 @@ dist
 
 # 忽略生产配置文件
 **/**/**.prod.**
+.vscode/settings.json

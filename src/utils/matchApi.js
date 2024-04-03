@@ -1,10 +1,12 @@
 const getHttpData = require("./getHttpData")
 const getHttpInfo = require("./getHttpInfo")
+const log = require("./log")
 const match404 = require("./match404")
 const matchRouter = require("./matchRouter")
 
 const matchApi = async (res, req, controllers, modals) => {
   const { path, method, queryParams, id } = getHttpInfo(res, req)
+  log.info(`请求路径: ${path}, 请求方法: ${method}`)
   const matchRouterName = matchRouter(path)
 
   if (!matchRouterName) {

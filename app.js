@@ -22,4 +22,4 @@ const requestHandler = async (request, response) => {
 
 }
 
-module.exports = requestHandler; 
+module.exports = requestHandler;

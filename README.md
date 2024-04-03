@@ -18,3 +18,5 @@
 - nodemon
 - cross-env
 - mysql
+- nodejs-logs
+  > 简单易用的nodejs插件
